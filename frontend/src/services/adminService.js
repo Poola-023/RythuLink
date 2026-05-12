@@ -1,46 +1,24 @@
-import axios from "axios";
-
-const API =
-    "http://localhost:8085/api/admin";
+import api from "./api";
 
 // USERS
 export const getUsers = async () => {
-
-    return await axios.get(
-        `${API}/users`
-    );
+  return await api.get("/api/admin/users");
 };
 
-export const deleteUser = async (
-    id
-) => {
-
-    return await axios.delete(
-        `${API}/users/${id}`
-    );
+export const deleteUser = async (id) => {
+  return await api.delete(`/api/admin/users/${id}`);
 };
 
 // CROPS
 export const getCrops = async () => {
-
-    return await axios.get(
-        `${API}/crops`
-    );
+  return await api.get("/api/admin/crops");
 };
 
-export const deleteCrop = async (
-    id
-) => {
-
-    return await axios.delete(
-        `${API}/crops/${id}`
-    );
+export const deleteCrop = async (id) => {
+  return await api.delete(`/api/admin/crops/${id}`);
 };
 
 // STATS
 export const getStats = async () => {
-
-    return await axios.get(
-        `${API}/stats`
-    );
+  return await api.get("/api/admin/stats");
 };
