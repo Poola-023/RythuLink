@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 
@@ -259,7 +258,7 @@ function MyCrops() {
 
     try {
       setLoading(true);
-      const response = await axios.get(`${API_URL}/farmer/${farmerId}`);
+      const response = await api.get(`${API_URL}/farmer/${farmerId}`);
       setCrops(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
       console.log("FETCH CROPS ERROR:", error);
@@ -440,7 +439,7 @@ function MyCrops() {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`${API_URL}/${cropId}`);
+      await api.delete(`${API_URL}/${cropId}`);
       alert(t.deleteSuccess);
       fetchCrops();
     } catch (error) {
@@ -466,7 +465,7 @@ function MyCrops() {
         price: Number(editCrop.price),
       };
 
-      await axios.put(`${API_URL}/${editCrop.cropId}`, updatedCrop);
+      await api.put(`${API_URL}/${editCrop.cropId}`, updatedCrop);
 
       alert(t.updateSuccess);
       setEditCrop(null);
