@@ -1,12 +1,5 @@
-import axios from "axios";
+import api from "./api";
 
-const WEATHER_API =
-    "http://localhost:8085/api/weather";
-
-export const getLiveWeather =
-    async (city) => {
-
-        return await axios.get(
-            `${WEATHER_API}/${city}`
-        );
-    };
+export const getLiveWeather = async (city) => {
+  return await api.get(`/api/weather/${city}`);
+};

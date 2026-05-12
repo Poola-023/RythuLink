@@ -1,9 +1,7 @@
-import axios from "axios";
-
-const API_URL = "http://localhost:8085/api/market-prices";
+import api from "./api";
 
 export const getVegetablePrices = async (filters = {}) => {
-  const response = await axios.get(`${API_URL}/vegetables`, {
+  const response = await api.get("/api/market-prices/vegetables", {
     params: filters,
   });
 
@@ -11,7 +9,7 @@ export const getVegetablePrices = async (filters = {}) => {
 };
 
 export const getFarmingProductPrices = async (filters = {}) => {
-  const response = await axios.get(`${API_URL}/products`, {
+  const response = await api.get("/api/market-prices/products", {
     params: filters,
   });
 

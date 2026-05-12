@@ -1,11 +1,9 @@
-import axios from "axios";
-
-const API = "http://localhost:8085/api/buyers";
+import api from "./api";
 
 export const registerBuyer = async (buyerData) => {
-    return await axios.post(`${API}/register`, buyerData);
+  return await api.post("/api/buyers/register", buyerData);
 };
 
 export const loginBuyer = async (loginData) => {
-    return await axios.post(`${API}/login`, loginData);
+  return await api.post("/api/buyers/login", loginData);
 };

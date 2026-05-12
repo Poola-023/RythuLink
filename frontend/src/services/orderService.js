@@ -1,19 +1,17 @@
-import axios from "axios";
-
-const API = "http://localhost:8085/api/orders";
+import api from "./api";
 
 export const placeOrder = async (orderData) => {
-    return await axios.post(API, orderData);
+  return await api.post("/api/orders", orderData);
 };
 
 export const getBuyerOrders = async (buyerId) => {
-    return await axios.get(`${API}/buyer/${buyerId}`);
+  return await api.get(`/api/orders/buyer/${buyerId}`);
 };
 
 export const getFarmerOrders = async (farmerId) => {
-    return await axios.get(`${API}/farmer/${farmerId}`);
+  return await api.get(`/api/orders/farmer/${farmerId}`);
 };
 
 export const updateOrderStatus = async (orderId, status) => {
-    return await axios.put(`${API}/${orderId}/status/${status}`);
+  return await api.put(`/api/orders/${orderId}/status/${status}`);
 };
