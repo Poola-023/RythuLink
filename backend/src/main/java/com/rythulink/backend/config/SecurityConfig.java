@@ -17,7 +17,15 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                        .requestMatchers("/", "/api/auth/**", "/api/health/**").permitAll()
+                        .requestMatchers("/", "/api/auth/**", 
+                                        "/api/buyers/**",
+                                        "/api/crops/**",    
+                                        "/api/crop-plan-progress/**",
+                                        "/api/images/**",
+                                        "/api/market-prices/**",
+                                        "/api/orders/**",
+                                        "/api/weather/**",
+                                        "/api/health/**").permitAll()                        
                         .anyRequest().permitAll()
                 );
 
