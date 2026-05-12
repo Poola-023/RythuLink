@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import api from "../services/api";
 
+const API_URL = "/api/crops";
 const TEXT = {
   en: {
     appName: "RythuLink AI",
