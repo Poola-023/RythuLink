@@ -1,29 +1,10 @@
-import axios from "axios";
+import api from "./api";
 
-const API = "http://localhost:8085/api/auth";
 
 export const registerUser = async (userData) => {
-
-    return await axios.post(
-        `${API}/register`,
-        userData,
-        {
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }
-    );
+  return await api.post("/api/auth/register", userData);
 };
 
-export const loginUser = async (userData) => {
-
-    return await axios.post(
-        `${API}/login`,
-        userData,
-        {
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }
-    );
+export const loginUser = async (loginData) => {
+  return await api.post("/api/auth/login", loginData);
 };
