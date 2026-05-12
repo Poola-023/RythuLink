@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api from "../services/api";
 
-const API_URL = "http://localhost:8085/api/crops";
+const API_URL = "/api/crops";
 
 const TEXT = {
   en: {

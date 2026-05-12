@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import api from "../services/api"; 
 
-const API_URL = "http://localhost:8085/api/crops";
-const PROGRESS_URL = "http://localhost:8085/api/crop-plan-progress";
+const API_URL = "/api/crops";
+const PROGRESS_URL = "/api/crop-plan-progress";
 
 const TEXT = {
     en: {
